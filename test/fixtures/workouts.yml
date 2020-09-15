@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  name: 
+  distance: 
+  duration: 
+
+two:
+  type: 
+  name: 
+  distance: 
+  duration: 
