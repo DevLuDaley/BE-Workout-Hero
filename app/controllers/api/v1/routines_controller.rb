@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Api::V1::RoutinesController < ApplicationController
-    def index
+  def index
     @routines = Routine.all.order(:created_at)
     render json: @routines, status: 200
   end
@@ -43,4 +45,4 @@ class Api::V1::RoutinesController < ApplicationController
   #   end
 end
 
-end
+# end
