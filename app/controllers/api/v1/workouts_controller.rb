@@ -7,7 +7,13 @@ class Api::V1::WorkoutsController < ApplicationController
     render json: @workouts, status: 200
   end
 
+  #   def test
+  #     render json: { test: "success" }
+  #   end
+
+  # end
   def create
+    # binding.pry
     @workout = Workout.create(workout_params)
     render json: @workout, status: 201
   end
@@ -34,7 +40,7 @@ class Api::V1::WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:type, :name, :duration, :distance)
+    params.require(:workout).permit(:workout_type, :name, :distance, :duration)
   end
 
   #   def workout_params
