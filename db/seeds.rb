@@ -10,14 +10,14 @@
 Workout.create([
                  { workout_type: 'cardio', name: 'basketball', distance: '1', duration: '1' },
                  { workout_type: 'cardio', name: 'running', distance: '2', duration: '1' },
-                 { workout_type: 'cardio', name: 'bike_riding', distance: '1', duration: '1.5' },
+                 { workout_type: 'cardio', name: 'bike riding', distance: '1', duration: '1.5' },
                  { workout_type: 'cardio', name: 'basketball', distance: '1', duration: '1.5' },
-                 { workout_type: 'cardio', name: 'bike_riding', distance: '1', duration: '1.5' },
+                 { workout_type: 'cardio', name: 'bike riding', distance: '1', duration: '1.5' },
                  { workout_type: 'cardio', name: 'jogging', distance: '1', duration: '1' },
                  { workout_type: 'cardio', name: 'sprinting', distance: '1', duration: '2.5' },
-                 { workout_type: 'cardio', name: 'bike_riding', distance: '1', duration: '1.5' },
+                 { workout_type: 'cardio', name: 'bike riding', distance: '1', duration: '1.5' },
                  { workout_type: 'cardio', name: 'sprinting', distance: '1', duration: '2.5' },
-                 { workout_type: 'cardio', name: 'bike_riding', distance: '2', duration: '3.5' }
+                 { workout_type: 'cardio', name: 'bike riding', distance: '2', duration: '3.5' }
                ])
 
 Routine.create([
