@@ -10,38 +10,38 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Workout.create([
-                 { workout_type: 'cardio', name: 'basketball', distance: '1', duration: '1' },
-                 { workout_type: 'cardio', name: 'running', distance: '2', duration: '1' },
-                 { workout_type: 'cardio', name: 'bike riding', distance: '1', duration: '1.5' },
-                 { workout_type: 'cardio', name: 'basketball', distance: '1', duration: '1.5' },
-                 { workout_type: 'cardio', name: 'bike riding', distance: '1', duration: '1.5' },
-                 { workout_type: 'cardio', name: 'jogging', distance: '1', duration: '1' },
-                 { workout_type: 'cardio', name: 'sprinting', distance: '1', duration: '2.5' },
-                 { workout_type: 'cardio', name: 'bike riding', distance: '1', duration: '1.5' },
-                 { workout_type: 'cardio', name: 'sprinting', distance: '1', duration: '2.5' },
-                 { workout_type: 'cardio', name: 'bike riding', distance: '2', duration: '3.5' }
+                 { workout_type: 'cardio', workout_name: 'basketball', distance: '1', duration: '1' },
+                 { workout_type: 'cardio', workout_name: 'running', distance: '2', duration: '1' },
+                 { workout_type: 'cardio', workout_name: 'bike riding', distance: '1', duration: '1.5' },
+                 { workout_type: 'cardio', workout_name: 'basketball', distance: '1', duration: '1.5' },
+                 { workout_type: 'cardio', workout_name: 'bike riding', distance: '1', duration: '1.5' },
+                 { workout_type: 'cardio', workout_name: 'jogging', distance: '1', duration: '1' },
+                 { workout_type: 'cardio', workout_name: 'sprinting', distance: '1', duration: '2.5' },
+                 { workout_type: 'cardio', workout_name: 'bike riding', distance: '1', duration: '1.5' },
+                 { workout_type: 'cardio', workout_name: 'sprinting', distance: '1', duration: '2.5' },
+                 { workout_type: 'cardio', workout_name: 'bike riding', distance: '2', duration: '3.5' }
                ])
 
 Routine.create([
-                 { name: 'Weight Training' },
-                 { name: 'Cardio Rush' },
-                 { name: 'Hoops' },
-                 { name: 'Batman Chest' },
-                 { name: 'Gym Glutes' }
+                 { routine_name: 'Sprints' },
+                 { routine_name: 'Cardio Rush' },
+                 { routine_name: 'Basketball Drills' },
+                 { routine_name: 'Batman Chest' },
+                 { routine_name: 'Gym Glutes' }
                ])
 
 r1 = Routine.all[0]
-r1.workouts.create(workout_type: 'Cardio', name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
-r1.workouts.create(workout_type: 'Cardio', name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
-r1.workouts.create(workout_type: 'Cardio', name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r1.workouts.create(workout_type: 'Cardio', workout_name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r1.workouts.create(workout_type: 'Cardio', workout_name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r1.workouts.create(workout_type: 'Cardio', workout_name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r2 = Routine.all[1]
-r2.workouts.create(workout_type: 'Cardio', name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
-r2.workouts.create(workout_type: 'Cardio', name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r2.workouts.create(workout_type: 'Cardio', workout_name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r2.workouts.create(workout_type: 'Cardio', workout_name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r3 = Routine.all[2]
-r3.workouts.create(workout_type: 'Cardio', name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r3.workouts.create(workout_type: 'Cardio', workout_name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r5 = Routine.all[4]
-r5.workouts.create(workout_type: 'Cardio', name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
-r5.workouts.create(workout_type: 'Cardio', name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r5.workouts.create(workout_type: 'Cardio', workout_name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r5.workouts.create(workout_type: 'Cardio', workout_name: Faker::Team.sport, distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 
 # 1.upto(5) do |_i|
 #   Routine.workout.create(workout_type: 'Cardio', name: 'Jogging', distance: '1', duration: '1')
