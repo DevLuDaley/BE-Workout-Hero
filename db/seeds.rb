@@ -39,14 +39,16 @@ r1.workouts.create(workout_type: 'Cardio', workout_name: 'boogie board', distanc
 r1.workouts.create(workout_type: 'Cardio', workout_name: 'one-legged-squats', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r1.workouts.create(workout_type: 'Cardio', workout_name: 'floor calf stretch', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r2 = Routine.all[1]
-r2.workouts.create(workout_type: 'Cardio', workout_name: 'floor clams hells', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r2.workouts.create(workout_type: 'Cardio', workout_name: 'floor clam shells', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r2.workouts.create(workout_type: 'Cardio', workout_name: 'tke\'s', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r3 = Routine.all[2]
 r3.workouts.create(workout_type: 'Cardio', workout_name: 'elliptical', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r4 = Routine.all[3]
+r4.workouts.create(workout_type: 'Cardio', workout_name: 'suicides', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r4.workouts.create(workout_type: 'Cardio', workout_name: 'mican drill', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r5 = Routine.all[4]
-r5.workouts.create(workout_type: 'Cardio', workout_name: 'suicides', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
-r5.workouts.create(workout_type: 'Cardio', workout_name: 'mican drill', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r5.workouts.create(workout_type: 'Cardio', workout_name: 'bear crawls', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r5.workouts.create(workout_type: 'Cardio', workout_name: 'pull-ups', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 
 # 1.upto(5) do |_i|
 #   Routine.workout.create(workout_type: 'Cardio', name: 'Jogging', distance: '1', duration: '1')
