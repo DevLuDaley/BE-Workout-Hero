@@ -7,6 +7,7 @@ class Api::V1::RoutinesController < ApplicationController
   end
 
   def create
+    # binding.pry
     @routine = Routine.create(routine_params)
     render json: @routine, status: 201
   end
@@ -18,31 +19,23 @@ class Api::V1::RoutinesController < ApplicationController
 
   def update
     @routine = Routine.find(params[:id])
-    # if @routine.update(routine_params)
-    #   render json: @routine, status: 200
+    # binding.pry
+    @routine.workouts.build(workout_type: params[:workout_type], workout_name: params[:workout_name], distance: params[:distance], duration: params[:duration])
 
-    #  @routine.update(routine_params)
     if @routine.save
       render json: @routine, status: :accepted
     else
       render json: { errors: @routine.errors.full_messages }, status: :unprocessible_entity
-      # end
     end
   end
 
   private
 
   def routine_params
-    params.require(:routine).permit(:type, :name, :duration, :distance)
+    params.require(:routine).permit(:type, :routine_name, :duration, :distance)
   end
 
-  #   def routine_params
-  #     params.permit(:title, :content)
-  #   end
-
-  #   def find_routine
-  #     @routine = Routine.find(params[:id])
-  #   end
+  def update_params
+    params.require(:routine).permit(:routine_name, :type, :workout_name, :duration, :distance, :workouts)
+  end
 end
-
-# end
