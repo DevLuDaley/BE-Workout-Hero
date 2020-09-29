@@ -20,7 +20,21 @@ class Api::V1::RoutinesController < ApplicationController
   def update
     @routine = Routine.find(params[:id])
     # binding.pry
-    @routine.workouts.build(workout_type: params[:workout_type], workout_name: params[:workout_name], distance: params[:distance], duration: params[:duration])
+
+    workout_type, workout_name, distance, duration = params.values_at(
+      :workout_type,
+      :workout_name,
+      :workout_distance,
+      :workout_duration
+    )
+
+    @routine.workouts.build(
+      workout_type: workout_type,
+      workout_name: workout_name,
+      distance: distance,
+      duration: duration
+    )
+    # @routine.workouts.build(workout_type: params[:workout_type], workout_name: params[:workout_name], distance: params[:distance], duration: params[:duration])
 
     if @routine.save
       render json: @routine, status: :accepted
