@@ -8,7 +8,4 @@ Rails.application.routes.draw do
       resources :workouts, :routines # , only: [:index, :update], :routine
     end
   end
-  # end
-  get '/test', to: 'application#test'
-  # end
 end
