@@ -6,6 +6,6 @@ class CreateJoinTable < ActiveRecord::Migration[6.0]
     # do |t|
       # t.index [:_id, :_id]
       # t.index [:_id, :_id]
-    # end
+    # end 
   end
 end
