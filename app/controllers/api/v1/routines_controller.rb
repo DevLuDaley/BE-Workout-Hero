@@ -2,7 +2,7 @@
 
 class Api::V1::RoutinesController < ApplicationController
   def index
-    @routines = Routine.all
+    @routines = Routine.all.order(:created_at)
     render json: @routines, status: 200
   end
 
