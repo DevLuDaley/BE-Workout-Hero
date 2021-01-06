@@ -5,5 +5,8 @@ GET https://be-hoop-drills.herokuapp.com/api/v1/routines
 
 
 ###
+GET https://be-workout-hero.herokuapp.com
+
+###
 GET https://be-workout-hero.herokuapp.com/api/v1/routines
 
