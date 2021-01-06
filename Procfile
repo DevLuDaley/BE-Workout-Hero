@@ -1,1 +1,1 @@
-web:bundle exec rails server -p 3007
+web:bundle exec rails server -p 3000
