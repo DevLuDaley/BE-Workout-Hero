@@ -18,7 +18,7 @@ Routine.create([
                  { routine_name: 'Back & Front Flips' },
                  { routine_name: 'Rehab: Quads' },
                  { routine_name: 'Batman Chest Exercises' },
-                 { routine_name: 'Dadbod-No-More Lifts' },
+                 { routine_name: 'Anti-Dadbod Exercises' },
                  { routine_name: 'Rehab: Glutes' }
                ])
 
