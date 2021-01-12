@@ -11,11 +11,14 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Routine.create([
-                 { routine_name: 'Rehab: Ankle' },
-                 { routine_name: 'Rehab: Quads' },
-                 { routine_name: 'Cardio Rush' },
+                 { routine_name: 'World Football Drills' },
+                 { routine_name: 'Beast Yoga' },
                  { routine_name: 'Basketball Drills' },
-                 { routine_name: 'Batman Chest' },
+                 { routine_name: 'Rehab: Left Ankle' },
+                 { routine_name: 'Back & Front Flips' },
+                 { routine_name: 'Rehab: Quads' },
+                 { routine_name: 'Batman Chest Exercises' },
+                 { routine_name: 'Dadbod-No-More Lifts' },
                  { routine_name: 'Rehab: Glutes' }
                ])
 
