@@ -46,10 +46,10 @@ class Api::V1::RoutinesController < ApplicationController
   private
 
   def routine_params
-    params.require(:routine).permit(:type, :routine_name, :duration, :distance)
+    params.require(:routine).permit(:routine_name)
   end
 
   def update_params
-    params.require(:routine).permit(:routine_name, :type, :workout_name, :duration, :distance, :workouts)
+    params.require(:routine).permit(:routine_name)
   end
 end
