@@ -14,3 +14,5 @@ GET https://be-workout-hero.herokuapp.com/api/v1/routines
 ###
 GET https://be-workout-hero2.herokuapp.com//api/v1/routines
 
+###
+GET http://localhost:3000/api/v1/routines/
