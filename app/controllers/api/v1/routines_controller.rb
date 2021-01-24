@@ -19,7 +19,7 @@ class Api::V1::RoutinesController < ApplicationController
 
   def update
     @routine = Routine.find(params[:id])
-    # binding.pry
+    binding.pry
     @routine.update(routine_params)
 
     workout_type, workout_name, distance, duration = params.values_at(
