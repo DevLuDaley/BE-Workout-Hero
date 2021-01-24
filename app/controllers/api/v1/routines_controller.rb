@@ -19,8 +19,9 @@ class Api::V1::RoutinesController < ApplicationController
 
   def update
     @routine = Routine.find(params[:id])
-    binding.pry
+    # binding.pry
     @routine.update(routine_params)
+    if params.include?('workout_name')
 
     workout_type, workout_name, distance, duration = params.values_at(
       :workout_type,
@@ -35,6 +36,10 @@ class Api::V1::RoutinesController < ApplicationController
       distance: distance,
       duration: duration
     )
+
+    else
+      @routine.save
+    end
     # @routine.workouts.build(workout_type: params[:workout_type], workout_name: params[:workout_name], distance: params[:distance], duration: params[:duration])
     # @routine.save
 
