@@ -22,28 +22,28 @@ class Api::V1::RoutinesController < ApplicationController
     # binding.pry
     @routine.update(routine_params)
 
-    # workout_type, workout_name, distance, duration = params.values_at(
-    #   :workout_type,
-    #   :workout_name,
-    #   :workout_distance,
-    #   :workout_duration
-    # )
+    workout_type, workout_name, distance, duration = params.values_at(
+      :workout_type,
+      :workout_name,
+      :workout_distance,
+      :workout_duration
+    )
     
-    # @routine.workouts.build(
-    #   workout_type: workout_type,
-    #   workout_name: workout_name,
-    #   distance: distance,
-    #   duration: duration
-    # )
+    @routine.workouts.build(
+      workout_type: workout_type,
+      workout_name: workout_name,
+      distance: distance,
+      duration: duration
+    )
     # @routine.workouts.build(workout_type: params[:workout_type], workout_name: params[:workout_name], distance: params[:distance], duration: params[:duration])
-    @routine.save
+    # @routine.save
 
     if @routine.save
       render json: @routine, status: :accepted
     else
       render json: { errors: @routine.errors.full_messages }, status: :unprocessible_entity
     end
-    binding.pry
+    # binding.pry
   end
 
   private
