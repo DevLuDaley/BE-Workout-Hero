@@ -25,8 +25,8 @@ class Api::V1::RoutinesController < ApplicationController
     workout_type, workout_name, distance, duration = params.values_at(
       :workout_type,
       :workout_name,
-      :workout_distance,
-      :workout_duration
+      :distance,
+      :duration
     )
     
     @routine.workouts.build(
