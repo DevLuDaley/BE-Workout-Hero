@@ -28,7 +28,7 @@ class Api::V1::WorkoutsController < ApplicationController
     # if @workout.update(workout_params)
     #   render json: @workout, status: 200
 
-    #  @workout.update(workout_params)
+     @workout.update(workout_params)
     if @workout.save
       render json: @workout, status: :accepted
     else
