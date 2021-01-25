@@ -6,12 +6,7 @@ class Api::V1::WorkoutsController < ApplicationController
     @workouts = Workout.all.order(:created_at)
     render json: @workouts, status: 200
   end
-
-  #   def test
-  #     render json: { test: "success" }
-  #   end
-
-  # end
+  
   def create
     # binding.pry
     @workout = Workout.create(workout_params)
@@ -42,10 +37,6 @@ class Api::V1::WorkoutsController < ApplicationController
   def workout_params
     params.require(:workout).permit(:workout_type, :workout_name, :distance, :duration)
   end
-
-  #   def workout_params
-  #     params.permit(:title, :content)
-  #   end
 
   #   def find_workout
   #     @workout = Workout.find(params[:id])
