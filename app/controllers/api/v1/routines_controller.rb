@@ -13,9 +13,22 @@ class Api::V1::RoutinesController < ApplicationController
   end
 
   def destroy
-    routine = Routine.find(params[:id])
-    render json: { routineId: routine.id }, status: 200 if routine.destroy
-  end
+    @routine = Routine.find(params[:id])
+    if params.include?('workout_id_to_delete')
+      @workoutlist = @routine.workouts
+      @workout_to_delete = @workoutlist.select { |w| w.id == params[:workout_id_to_delete] }
+      # can = @routine.workouts.select { |w| w.id == params[:workout_id_to_delete] }
+      @routine.workouts.destroy(@workout_to_delete)
+      render json: { routineId: params[:id], workoutId: params[:workout_id_to_delete] }, status: 200
+      # render json: { routineId: @routine.id, workoutId: params[:workout_id_to_delete] }, status: 200
+      # @workout_to_delete.destroy
+      # render json: { routineId: routine.id }, status: 200 if routine.destroy
+      # binding.pry
+    else
+      # @routine = Routine.find(params[:id])
+      render json: { routineId: @routine.id }, status: 200 #if routine.destroy
+    end
+    end
 
   def update
     @routine = Routine.find(params[:id])

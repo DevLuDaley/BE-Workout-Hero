@@ -40,11 +40,18 @@ Workout.create([
 r1 = Routine.all[0]
 r1.workouts.create(workout_type: 'Cardio', workout_name: 'squats', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r1.workouts.create(workout_type: 'Cardio', workout_name: 'boogie-board', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r1.workouts.create(workout_type: 'Cardio', workout_name: 'old-soldier-runs', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r1.workouts.create(workout_type: 'Cardio', workout_name: 'young-soldier-runs', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r1.workouts.create(workout_type: 'Cardio', workout_name: 'fighter-pilot-swings', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r1.workouts.create(workout_type: 'Cardio', workout_name: 'one-legged-squats', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r1.workouts.create(workout_type: 'Cardio', workout_name: 'floor-calf-stretch', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r2 = Routine.all[1]
 r2.workouts.create(workout_type: 'Cardio', workout_name: 'floor-clam-shells', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r2.workouts.create(workout_type: 'Cardio', workout_name: 'tke\'s', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r2.workouts.create(workout_type: 'Cardio', workout_name: 'floor-bridges', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r2.workouts.create(workout_type: 'Cardio', workout_name: 'big-runs', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r2.workouts.create(workout_type: 'Cardio', workout_name: 'back-flips', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r2.workouts.create(workout_type: 'Cardio', workout_name: 'ace\'s', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r3 = Routine.all[2]
 r3.workouts.create(workout_type: 'Cardio', workout_name: 'elliptical', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r4 = Routine.all[3]
