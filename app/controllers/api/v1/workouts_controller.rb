@@ -15,6 +15,7 @@ class Api::V1::WorkoutsController < ApplicationController
 
   def destroy
     workout = Workout.find(params[:id])
+    # workout = Workout.find(params[:workout_id_to_delete])
     render json: { workoutId: workout.id }, status: 200 if workout.destroy
   end
 
@@ -35,8 +36,11 @@ class Api::V1::WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:workout_type, :workout_name, :distance, :duration)
+    params.permit(:id, :workout_type, :workout_name, :distance, :duration)
   end
+  # def workout_params
+  #   params.require(:workout).permit(:workout_type, :workout_name, :distance, :duration)
+  # end
 
   #   def find_workout
   #     @workout = Workout.find(params[:id])
