@@ -81,6 +81,10 @@ r10 = Routine.all[9]
 r10.workouts.create(workout_type: 'Cardio', workout_name: 'backwards-bear-crawls', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
 r10.workouts.create(workout_type: 'Cardio', workout_name: 'pull-ups', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
  
+r11 = Routine.all[10]
+r11.workouts.create(workout_type: 'Weight-Lifting', workout_name: 'bear crawls', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+r11.workouts.create(workout_type: 'Cardio-Lifting', workout_name: 'back-jumps', distance: Faker::Number.between(from: 1, to: 8), duration: Faker::Number.between(from: 1, to: 10))
+ 
 # 1.upto(5) do |_i|
 #   Routine.workout.create(workout_type: 'Cardio', name: 'Jogging', distance: '1', duration: '1')
 # end
