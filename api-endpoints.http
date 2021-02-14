@@ -16,3 +16,20 @@ GET https://be-workout-hero2.herokuapp.com//api/v1/routines
 
 ###
 GET http://localhost:3000/api/v1/routines/
+
+
+###
+GET http://localhost:3000/api/v1/routines
+
+###
+PATCH http://localhost:3000/api/v1/routines/9/workouts/13?workout_name=youngest-soldier-runs&workout_type=Cardio&distance=22&duration=72
+
+###
+GET http://localhost:3000/api/v1/routines/1/workouts/
+
+
+
+
+
+###
+GET http://localhost:3000/api/v1/workouts/1/routines

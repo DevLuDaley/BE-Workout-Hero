@@ -7,8 +7,8 @@ class Api::V1::RoutinesController < ApplicationController
   end
 
   def create
-    # binding.pry
     @routine = Routine.create(routine_params)
+    # binding.pry
     render json: @routine, status: 201
   end
 
@@ -26,6 +26,7 @@ class Api::V1::RoutinesController < ApplicationController
       # binding.pry
     else
       # @routine = Routine.find(params[:id])
+      @routine.destroy
       render json: { routineId: @routine.id }, status: 200 #if routine.destroy
     end
     end
@@ -34,40 +35,70 @@ class Api::V1::RoutinesController < ApplicationController
     @routine = Routine.find(params[:id])
     # binding.pry
     @routine.update(routine_params)
-    if params.include?('workout_name')
-
-    workout_type, workout_name, distance, duration = params.values_at(
-      :workout_type,
-      :workout_name,
-      :distance,
-      :duration
-    )
     
-    @routine.workouts.build(
-      workout_type: workout_type,
-      workout_name: workout_name,
-      distance: distance,
-      duration: duration
-    )
+    if params.include?('update_workout')
+      @workoutlist = @routine.workouts
+      @workout = @workoutlist.find { |w| w.id == params[:workout][:id]}
+      # puts @workout
+      # puts @workoutlist[0]
+      # puts params
+      # puts params[:workout][:id]
+      # .to_i}
+      # binding.pry
 
-    else
-      @routine.save
+      @workout = {
+          workout_type: params[:workout][:workout_type],
+          workout_name: params[:workout][:workout_name],
+          distance: params[:workout][:distance],
+          duration: params[:workout][:duration]
+          # id: params[:workout][:workout_id],
+          # workout: @workout,
+        }
+      # @workout.save
+      # render json: @routine, status: :accepted
+
+    # else if params.include?('workout_name')
+    else if params.include?('create_workout')
+      workout_type, workout_name, distance, duration = params.values_at(
+        :workout_type,
+        :workout_name,
+        :distance,
+        :duration
+      )
+      @routine.workouts.build(
+        workout_type: workout_type,
+        workout_name: workout_name,
+        distance: distance,
+        duration: duration
+      )
+      else
+        @routine.save
+      end
     end
-    # @routine.workouts.build(workout_type: params[:workout_type], workout_name: params[:workout_name], distance: params[:distance], duration: params[:duration])
-    # @routine.save
 
-    if @routine.save
+
+    if @workout && @routine.save
+      render json: {workout: @workout, routineId: @routine.id }, status: :accepted
+
+    elsif @routine.save
       render json: @routine, status: :accepted
     else
       render json: { errors: @routine.errors.full_messages }, status: :unprocessible_entity
     end
+    end
     # binding.pry
-  end
+  # end
 
   private
 
   def routine_params
-    params.require(:routine).permit(:routine_name)
+    # params.require(:routine).permit(:routine_name, :id)
+    params.require(:routine).permit(:routine_name, :id)
+    # params.permit(:workout, :routine, :routine_name, :id, :update_workout, {workout_attributes: [:workout_id, :workout_name, :workout_type, :distance, :duration]})
+  end
+
+  def workout_params
+    params.permit(:workout_id, :workout_name, :workout_type, :distance, :duration, :workout, :routine)
   end
 
   # def update_params
