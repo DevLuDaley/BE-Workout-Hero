@@ -13,6 +13,7 @@ class Api::V1::RoutinesController < ApplicationController
   end
 
   def destroy
+    # ! make sure to destroy at the end
     @routine = Routine.find(params[:id])
     if params.include?('workout_id_to_delete')
       @workoutlist = @routine.workouts
@@ -26,6 +27,7 @@ class Api::V1::RoutinesController < ApplicationController
       # binding.pry
     else
       # @routine = Routine.find(params[:id])
+      #! destroy
       @routine.destroy
       render json: { routineId: @routine.id }, status: 200 #if routine.destroy
     end
