@@ -7,10 +7,31 @@ class Api::V1::WorkoutsController < ApplicationController
     render json: @workouts, status: 200
   end
   
+  def new
+    @routine = Routine.find(params[:routineId])
+    @workout = Workout.new
+  end
+  
   def create
+    @routine = Routine.find(params[:routineId])
+    @workout = @routine.workouts.build(workout_params)
+    @workout.routines.push(@routine)
     # binding.pry
-    @workout = Workout.create(workout_params)
-    render json: @workout, status: 201
+    # @workout = Workout.create(workout_params)
+    # @workout = Workout.create(
+    #   workout_type, workout_name, distance, duration = params.values_at(
+    #     :workout_type,
+    #     :workout_name,
+    #     :distance,
+    #     :duration
+    #   )
+    # )
+    # @routine = routines.find { |r| r.id == params[:routineId]}
+    # @workout.routines.push(routineId)
+
+    @workout.save
+    render json: { workout: @workout, routineId: params[:routineId] }, status: 201
+    # binding.pry
   end
 
   def destroy
@@ -36,7 +57,8 @@ class Api::V1::WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.permit(:id, :workout_type, :workout_name, :distance, :duration)
+    params.require(:workout).permit(:id, :workout_type, :workout_name, :distance, :duration, :workout, :routineObj, :routineId, :routine_id)
+      # , { routine_attributes: [:routineId, :routine_name, :id] }
   end
   # def workout_params
   #   params.require(:workout).permit(:workout_type, :workout_name, :distance, :duration)
