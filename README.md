@@ -3,12 +3,19 @@ BE-Workout-Hero is the backend rails-only api repo supplying data to the Workout
 
 ## Installation
 
-staart up the rails server and you're ready to go.
+
+1- Fork and clone this repository.
+
+2- Install dependencies with `bundle install`.
+
+## Usage
+
+1- start up the rails server.
 ```terminal
 rails s
 ```
 
-## Usage
+2- visit the below endpoints.
 Endpoints:
 ```
       api/v1/routines
