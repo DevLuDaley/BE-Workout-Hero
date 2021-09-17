@@ -1,5 +1,5 @@
 # BE-Workout-Hero
-BE-Workout-Hero is the backend rails-only api repo supplying data to the Workout Hero App.
+BE-Workout-Hero is the backend rails-only api repo supplying data to the Workout Hero app.
 
 ## Installation
 
