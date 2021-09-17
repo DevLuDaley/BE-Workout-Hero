@@ -18,8 +18,8 @@ rails s
 2- visit the below endpoints.
 Endpoints:
 ```
-      api/v1/routines
-      api/v1/workouts
+      http://localhost:3000/api/v1/routines
+      http://localhost:3000/api/v1/workouts
 
 ```
 
